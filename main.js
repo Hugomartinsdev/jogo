@@ -5,6 +5,8 @@ var mapa = [["*","*","*","*","*",],
 ["*","*","*","*","*"]]
 document.getElementById("mapa").innerHTML = mapa
 
+var jogador = "&"
+
 window.addEventListener("keydown",function keydown(event){
 var tecla = event.keyCode
 this.alert(tecla)
