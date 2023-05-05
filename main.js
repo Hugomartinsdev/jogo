@@ -1,4 +1,3 @@
-//fazer somatoria e subtração de vetor para a movimentação
-function tutorial(params) {
+function teste(params) {
     alert("oi")
 }
