@@ -1,3 +1,7 @@
+function mapa(params) {   
+var jogador = "&"
+var chave = "@"
+var porta = "D"
 var mapa = [["*","*","*","*","*",],
 ["*","0","0","0","*",],
 ["*","0","0","0","*",],
@@ -5,8 +9,8 @@ var mapa = [["*","*","*","*","*",],
 ["*","*","*","*","*"]]
 document.getElementById("mapa").innerHTML = mapa
 
-var jogador = "&"
 
+}
 window.addEventListener("keydown",function keydown(event){
 var tecla = event.keyCode
 this.alert(tecla)
