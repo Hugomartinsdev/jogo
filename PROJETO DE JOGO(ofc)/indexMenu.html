@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+</head>
+
+<body style="background-color: black;">
+
+    <center>
+        <img src="GALACTIC DUNGEON.png">
+        <br>
+        <br>
+        <p style="color: white;font-size: 100px ;"  id="titulo">
+           
+        </p>
+
+        <br>
+
+<img src="TUTORIAL.png" usemap="#image-map1">
+
+<map name="image-map1">
+    <area target="_blank" alt="" title="TUTOR" href="indexTutorial.html" coords="7,8,478,154" shape="rect">
+</map>
+
+      
+
+      
+<img src="JOGAR.png" usemap="#image-map2">
+
+<map name="image-map2">
+    <area target="_blank" alt="" title="JOGAR" href="game/index.html" coords="13,9,341,136" shape="rect">
+</map>
+
+      
+<img src="SAIR.png" usemap="#image-map3">
+
+<map name="image-map3">
+    <area target="_blank" alt="" title="QUIT-SAIR" href="indexSair.html" coords="33,13,299,157" shape="rect">
+</map>
+
+    </center>
+
+    <script>
+        var titulo = document.getElementById("titulo");
+        //INSERIR O TÍTULO!
+        var textoAnimado = "🚀Galactic Dungeon👾";
+        titulo.textContent = "";
+
+        function animarTexto() {
+            for (let i = 0; i < textoAnimado.length; i++) {
+                setTimeout(() => {
+                    titulo.textContent += textoAnimado[i];
+                }, i * 100);
+            }
+        }
+
+        function gerarCor() {
+            var letras = "0123456789ABCDEF";
+            var cor = "#";
+            for (var i = 0; i < 6; i++) {
+                cor += letras[Math.floor(Math.random() * 16)];
+            }
+            return cor;
+        }
+
+        function mudarCor() {
+            titulo.style.color = gerarCor();
+            setTimeout(mudarCor, 1000);
+        }
+
+        animarTexto();
+        mudarCor();
+    </script>
+</body>
+</html>
