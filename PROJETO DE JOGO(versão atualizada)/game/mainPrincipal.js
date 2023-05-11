@@ -5,7 +5,9 @@ function mapToHTML(map) {
         '*': '<span class="tile wall">*</span>',
         '.': '<span class="tile floor">.</span>',
         '&': '<span class="tile player">&</span>',
-        'X': '<span class="tile goal">X</span>'
+        '=': '<span class="tile goal">=</span>',
+        'D': '<span class="tile goal">D</span>',
+        '@': '<span class="tile goal">@</span>',
     };
     for (y = 0; y < map.length; y += 1) {
         for (x = 0; x < map[y].length; x += 1) {
@@ -33,21 +35,76 @@ function updateMap() {
 
 function playerMove(x, y) {
     var toX = player.x + x, toY = player.y + y;
-    if (map[toY][toX] === '.' || map[toY][toX] === 'X') {
+    if (map[toY][toX] === '.' || map[toY][toX] === '=') {
         player.x = toX;
         player.y = toY;
     }
     updateMap();
-    if (map[toY][toX] === 'X') {
+    if (map[toY][toX] === '=') {
+        maze.innerHTML = 'Você ganhou';
+        document.getElementById('buttons').innerHTML = '';
+    }
+}
+
+function playerMove(x, y) {
+    var toX = player.x + x, toY = player.y + y;
+    if (map[toY][toX] === '.' || map[toY][toX] === 'D') {
+        player.x = toX;
+        player.y = toY;
+    }
+    updateMap();
+    if (map[toY][toX] === 'D') {
+        maze.innerHTML = 'Porta Fechada volte e pegue a chave';
+        document.getElementById('buttons').innerHTML = '';
+    }
+}
+
+function playerMove(x, y) {
+    var toX = player.x + x, toY = player.y + y;
+    if (map[toY][toX] === '.' || map[toY][toX] === '@') {
+        player.x = toX;
+        player.y = toY;
+    }
+    updateMap();
+    if (map[toY][toX] === '@') {
+        maze.innerHTML = 'Muito bem pegou a chave, CHAVOSO!';
+        document.getElementById('buttons').innerHTML = '';
+        // Verifica se a posição atual do jogador é a mesma da porta "D"
+        if (player.x === 2 && player.y === 13) {
+            // Abre a porta "D"
+            map[13][1] = '.';
+            updateMap();
+        }
+    }
+    if (map[toY][toX] === 'D') {
+        maze.innerHTML = 'Porta Fechada volte e pegue a chave';
+        document.getElementById('buttons').innerHTML = '';
+    }
+}
+function playerMove(x, y) {
+    var toX = player.x + x, toY = player.y + y;
+    if (map[toY][toX] === '.' || map[toY][toX] === '@') {
+        player.x = toX;
+        player.y = toY;
+    }
+    updateMap();
+    if (map[toY][toX] === '@') {
+        map[toY][toX] = '.';
+        map[13][2] = '=';
+        maze.innerHTML = 'Muito bem pegou a chave, CHAVOSO!';
+        document.getElementById('buttons').innerHTML = '';
+    }
+    if (map[toY][toX] === '=') {
         maze.innerHTML = 'Você ganhou';
         document.getElementById('buttons').innerHTML = '';
     }
 }
 
 
+
 map = [
     '*****************',
-    '*...............*',
+    '*..............@*',
     '*.***.***.***.***',
     '*.*.*.*...*...*.*',
     '*.***.*****.***.*',
@@ -59,8 +116,8 @@ map = [
     '*.*************.*',
     '*...............*',
     '*****.*****.*****',
-    '*.......*...*...*',
-    'X..**.***.***.***.',
+    '**D.....*...*...*',
+    '..**.***.***.***.',
     
 ];
 
