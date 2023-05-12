@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animacao ASCII Piscando</title>
+	<meta charset="utf-8">
+	<style>
+		body {
+			background-color: black;
+			color: red;
+			font-family: monospace;
+			font-size: 36px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<pre id="ascii">
+        
+        _____  ______  _____ _____  _____ _______ ______ ___  
+        |  __ \|  ____|/ ____|_   _|/ ____|__   __|  ____|__ \ 
+        | |  | | |__  | (___   | | | (___    | |  | |__     ) |
+        | |  | |  __|  \___ \  | |  \___ \   | |  |  __|   / / 
+        | |__| | |____ ____) |_| |_ ____) |  | |  | |____ |_|  
+        |_____/|______|_____/|_____|_____/   |_|  |______|(_)  
+                                 
+                                                    
+	</pre>
+   
+    </map>
+    <img src="NÃO!.png" usemap="#image-map1">
+    
+    <map name="image-map1">
+        <area target="" alt="" title="" href="indexMenu.html" coords="4,7,92,65" shape="rect">
+        
+        💔
+
+    </map>     <img src="SIM.png" usemap="#image-map2">
+      <map name="image-map2">
+          <area target="" alt="" title="" href="GAMEOVERDINAM.HTML" coords="26,19,110,81" shape="rect">
+ 
+
+
+
+	<script>
+		var ascii = document.getElementById("ascii");
+		var isRed = true;
+
+		function blink() {
+			if (isRed) {
+				ascii.style.color = "black";
+			} else {
+				ascii.style.color = "red";
+			}
+			isRed = !isRed;
+		}
+
+		setInterval(blink, 500);
+	</script>
+</body>
+</html>
