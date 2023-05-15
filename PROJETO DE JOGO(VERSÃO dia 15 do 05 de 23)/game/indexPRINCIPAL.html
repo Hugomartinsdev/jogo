@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<img src="GALACTIC DUNGEON.png" alt="Imagem" style="position: fixed; top: 0; left: 0; width: 100%; height: auto; opacity: 0.1; z-index: -2;">
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jogo</title>
+	<link rel="stylesheet" href="styles.css">
+	<audio id="audio-musica" src="Zelda Music on 8 bits synthesizer - NES version.m4a" autoplay></audio>
+
+</head>
+<body style="background-color: black;">
+	
+	<center>
+	<pre style="color: white;size: 100px;" id="maze"></pre>
+	<span class="tile player piscar">&</span>
+<div id="health-bar">
+  <div id="health-bar-fill"></div>
+</div>
+
+	</center>
+	<div id="buttons">
+	    <button id="button-north" class="button"></button>
+	    <button id="button-west" class="button"></button>
+	    <button id="button-east" class="button"></button>
+	    <button id="button-south" class="button"></button>
+	</div>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: black;
+		}
+		canvas {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+	</style>
+	<script src="mainPrincipal.js"></script>
+	<script src="maintest2.js"></script>
+	<script src="music.js"></script>
+</body>
+</html>
