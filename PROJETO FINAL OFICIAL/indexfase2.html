@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+
+	<style>
+		
+
+		
+		.tile.wall {
+    animation: changeColor 1s infinite alternate;
+}
+
+@keyframes changeColor {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: green; }
+}
+
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: black;
+		}
+		.shake {
+			animation: shake 0.5s linear infinite;
+		}
+		@keyframes shake {
+			0% { transform: translate(0, 0); }
+			10%, 30%, 50%, 70%, 90% { transform: translate(-5px, 5px); }
+			20%, 40%, 60%, 80% { transform: translate(5px, -5px); }
+			100% { transform: translate(0, 0); }
+		}
+	</style>
+	<style>
+		.tile.spike {
+			color: red; /* Ou qualquer estilo desejado para o espinho */
+		}
+	</style>
+	
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="en">
+	
+<head> <img  src="PNG ASTRONAUTA.png" alt="Imagem" style="position: fixed; top: 0; left: 0; width: 100%; height: auto; opacity: 0.2; z-index: -2;">
+	
+	<BR>
+
+  
+  
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jogo</title>
+	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+	<audio id="audio-musica" src="The Adults Are Talking 8 Bit _ The Strokes.m4a" autoplay></audio>
+   
+</head>
+<body style="background-color: black;">
+	
+	<center>
+        
+	<pre style="color: white;font-size: 30px ;" id="maze" ></pre>
+	<span style="color: rgb(255, 0, 0);size: 50px;" class="tile player piscar">&</span>
+<div id="health-bar">
+  <div id="health-bar-fill"></div>
+</div>
+
+	</center>
+	<div id="buttons">
+	    <button id="button-north" class="button"></button>
+	    <button id="button-west" class="button"></button>
+	    <button id="button-east" class="button"></button>
+	    <button id="button-south" class="button"></button>
+	</div>
+	
+	<style>
+		
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: black;
+		}
+		canvas {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+		
+	</style>
+	<script src="fasedois.js"></script>
+	<script src="fasedoisdano.js"></script>
+	<script src="music.js"></script>
+	<script src="fasedois2.js"></script>
+	<script src="fasedoisdano2.js"></script>
+	<script src="fasedois4.js"></script>
+	<script src="fasedoisbombs.js"></script>
+</body>
+</html>
+
+	<script>
+		function followPlayer() {
+	const playerElement = document.querySelector('.player');
+	const playerRect = playerElement.getBoundingClientRect();
+
+
+	const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+	const scrollX = playerRect.left - viewportWidth / 2 + playerRect.width / 2;
+	window.scrollTo({
+		left: scrollX,
+		behavior: 'smooth' 
+	});
+
+	
+	const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+	const scrollY = playerRect.top - viewportHeight / 2 + playerRect.height / 2;
+	window.scrollTo({
+		top: scrollY,
+		behavior: 'smooth' 
+	});
+}
+
+
+setInterval(followPlayer, 100);
+
+	</script>
+</body>
+</html>
+<script src="mainCSS.js"></script>
+
+
+
+<script>
+var map, player = { x: 1, y: 8, lives: 3 }, i, maze = document.getElementById('maze'), win;
+var damageCount = 0; // Variável de contador para o dano
+
+function playerMove(x, y) {
+    var toX = player.x + x,
+        toY = player.y + y;
+
+    if (map[toY][toX] === '.' || map[toY][toX] === '@') {
+        player.x = toX;
+        player.y = toY;
+    } else if (map[toY][toX] === '#') {
+        takeDamage(); // Deduzir uma vida do jogador
+        if (player.lives > 0) {
+            resetPlayerPosition(); // Redefinir a posição do jogador
+            updateHealthBar(); // Atualizar a barra de vida
+            alert("Você tomou dano. Vidas restantes: " + player.lives);
+        } else {
+            gameOver(); // O jogador perdeu todas as vidas
+        }
+    }
+
+    updateMap();
+}
+
+function takeDamage() {
+    player.lives--; // Deduzir uma vida do jogador
+}
+
+function resetPlayerPosition() {
+    player.x = 1; // Definir a posição inicial do jogador
+    player.y = 8;
+}
+
+function updateHealthBar() {
+    // Atualizar a barra de vida do jogador
+    var healthBarFill = document.getElementById('health-bar-fill');
+    var percentage = (player.lives / 3) * 100; // Calcular a porcentagem de vidas restantes
+    healthBarFill.style.width = percentage + '%'; // Definir a largura da barra de vida
+}
+
+function gameOver() {
+    alert("Game Over! Você perdeu todas as vidas.");
+	window.location.href = "indexPrincipal.html";
+
+    // Aqui você pode adicionar o código para reiniciar o jogo ou realizar outras ações após perder o jogo
+}
+
+// Restante do seu código...
+
+</script>
+
+
+ <script>
+        var map, player = { x: 1, y: 8, lives: 3 }, i, maze = document.getElementById('maze'), win;
+
+        function playerMove(x, y) {
+           var toX = player.x + x,
+                toY = player.y + y;
+
+            if (map[toY][toX] === '.' || map[toY][toX] === '@') {
+                player.x = toX;
+                player.y = toY;
+            } else if (map[toY][toX] === '#') {
+                takeDamage(); // Deduzir uma vida do jogador
+
+                if (player.lives > 0) {
+                    resetPlayerPosition(); // Redefinir a posição do jogador
+                    updateLives(); // Atualizar a contagem de vidas
+                    alert("Você tomou dano. Vidas restantes: " + player.lives);
+                } else {
+                    gameOver(); // O jogador perdeu todas as vidas
+                }
+            }
+
+            updateMap();
+        }
+
+        function takeDamage() {
+            player.lives--; // Deduzir uma vida do jogador
+        }
+
+        function resetPlayerPosition() {
+            player.x = 1; // Definir a posição inicial do jogador
+            player.y = 8;
+        }
+
+        function updateLives() {
+            var livesCount = document.getElementById('lives-count');
+            livesCount.textContent = player.lives; // Atualizar a contagem de vidas na tela
+        }
+
+        function gameOver() {
+		
+            alert("Game Over! Você perdeu todas as vidas.");
+        }
+
+        // Restante do seu código...
+    </script>
+
+
+
+</script>

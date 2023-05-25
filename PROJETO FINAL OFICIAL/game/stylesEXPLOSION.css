@@ -1,0 +1,13 @@
+#maze {
+    position: relative;
+    width: 600px; /* Ajuste o tamanho conforme necessário */
+    height: 400px; /* Ajuste o tamanho conforme necessário */
+    overflow: hidden;
+  }
+  
+  .maze-element {
+    position: absolute;
+    transition: all 2s linear; /* Tempo e tipo de transição */
+  }
+  
+  

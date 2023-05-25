@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: black;
+		}
+		.shake {
+			animation: shake 0.5s linear infinite;
+		}
+		@keyframes shake {
+			0% { transform: translate(0, 0); }
+			10%, 30%, 50%, 70%, 90% { transform: translate(-5px, 5px); }
+			20%, 40%, 60%, 80% { transform: translate(5px, -5px); }
+			100% { transform: translate(0, 0); }
+		}
+		/* Other styles omitted for brevity */
+	</style>
+</head>
+<body>
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	
+		
+	
+		<style>
+			
+			.tile.wall {
+		animation: changeColor 1s infinite alternate;
+	}
+	
+	@keyframes changeColor {
+		0% { color: red; }
+		50% { color: blue; }
+		100% { color: green; }
+	}
+	
+			body {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: black;
+			}
+			.shake {
+				animation: shake 0.5s linear infinite;
+			}
+			@keyframes shake {
+				0% { transform: translate(0, 0); }
+				10%, 30%, 50%, 70%, 90% { transform: translate(-5px, 5px); }
+				20%, 40%, 60%, 80% { transform: translate(5px, -5px); }
+				100% { transform: translate(0, 0); }
+			}
+		</style>
+		<style>
+			.tile.spike {
+				color: red; /* Ou qualquer estilo desejado para o espinho */
+			}
+		</style>
+		
+	</head>
+	<body>
+		<!DOCTYPE html>
+	<html lang="en">
+		
+	<head> <img  src="PNG ASTRONAUTA.png" alt="Imagem" style="position: fixed; top: 0; left: 0; width: 100%; height: auto; opacity: 0.2; z-index: -2;">
+		
+		<BR>
+	
+	  
+	  
+	
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Jogo</title>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="styles2.css">
+		<audio id="audio-musica" src="Max Coveri - Running In the 90's 8bit.m4a" autoplay></audio>
+	   
+	</head>
+	<body style="background-color: black;">
+		
+		<center>
+			
+		<pre style="color: white;font-size: 60px;" id="maze"></pre>
+		<span style="color: rgb(255, 0, 0);size: 100px;" class="tile player piscar">&</span>
+	<div id="health-bar">
+	  <div id="health-bar-fill"></div>
+	</div>
+	
+		</center>
+		<div id="buttons">
+			<button id="button-north" class="button"></button>
+			<button id="button-west" class="button"></button>
+			<button id="button-east" class="button"></button>
+			<button id="button-south" class="button"></button>
+		</div>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: black;
+			}
+			canvas {
+				display: block;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+		</style>
+		<script src="fase3.js"></script>
+	
+		
+	</body>
+	</html>
+	
+		<script>
+		function toggleLight() {
+  // Obtém uma referência ao elemento HTML que contém o conteúdo da página
+  var pageContent = document.documentElement;
+
+  // Armazena o conteúdo original da página
+  var originalContent = pageContent.innerHTML;
+
+  // Cria uma string com "*" brancos do mesmo tamanho do conteúdo original
+  var explosion = '*'.repeat(originalContent.length);
+
+  // Substitui o conteúdo da página pelo conjunto de "*"
+  pageContent.innerHTML = explosion;
+
+  // Modifica o estilo da página para criar o efeito de branqueamento
+  pageContent.style.backgroundColor = 'white';
+
+  setTimeout(function() {
+    // Retorna ao estilo original após 200 milissegundos
+    pageContent.style.backgroundColor = 'black';
+
+    // Restaura o conteúdo HTML original da página
+    pageContent.innerHTML = originalContent;
+  }, 200);
+}
+
+			function followPlayer() {
+	const playerElement = document.querySelector('.player');
+	const playerRect = playerElement.getBoundingClientRect();
+
+
+	const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+	const scrollX = playerRect.left - viewportWidth / 2 + playerRect.width / 2;
+	window.scrollTo({
+		left: scrollX,
+		behavior: 'smooth' 
+	});
+
+	
+	const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+	const scrollY = playerRect.top - viewportHeight / 2 + playerRect.height / 2;
+	window.scrollTo({
+		top: scrollY,
+		behavior: 'smooth' 
+	});
+}
+
+
+setInterval(followPlayer, 100);
+
+		</script>
+	</body>
+	</html>
+	<script src="mainCSS.js"
+	
