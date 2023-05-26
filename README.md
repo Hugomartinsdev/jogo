@@ -22,3 +22,6 @@ D: Símbolo que representa a porta fechada.
 O: Símbolo que representa um botão que caso o usuário toque nela ativa uma bomba que paralizará o jogador.
 #: Símbolo que representa um espinho. A fase é reiniciada quando o jogador toca no espinho, caso a fase seja reiniciada três vezes, o jogo volta para o menu principal.
 >: Símbolo que representa um teletransporte. O teletransporte sempre deve vir em pares, quando o jogador toca em um ele é transportado para o outro e vice-versa.
+
+#integrantes#
+Hugo Martins,Yuri Sakaguchi,Felipe Souza,Ana Nunes
