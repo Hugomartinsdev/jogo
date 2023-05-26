@@ -1,6 +1,6 @@
 # jogo
 #Tutorial#
-W: O jogador movimenta uma unidade para cima;<br>
+W: O jogador movimenta uma unidade para cima;
 A: O jogador movimenta uma unidade para esquerda;
 S: O jogador movimenta uma unidade para baixo;
 D: O jogador movimenta uma unidade para direita;
